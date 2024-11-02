@@ -12,13 +12,14 @@
     int Y = 0;
     int X1 = 0;
     int Y1 = 0;
+    int Score =0;
 
     // creating map
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
         {   
-        int Num = (rand() % 3) + 1;
+        int Num = (rand() % 4) + 1;
             switch (Num)
            {
             case 1:
@@ -31,6 +32,10 @@
 
             case 3:
                 Map[i][j] = ' ';
+                break;
+
+            case 4:
+                Map[i][j] = 'I';
                 break;
 
             default:
@@ -55,10 +60,12 @@
         printf("\n");
     }
     printf(" ==========\n");
+    printf("\n");
 
     // printig the instructions
     printf("You are *\n");
     printf("Your Objective: reach destination 'P'\n");
+    printf("Side Quest: Collect 'I's for points\n");
     printf("Controls:\n");
     printf("W: up, S: down, A: left, D: right, Q: quit");
     printf("\n");
@@ -91,7 +98,8 @@
             {
                 X1 = X, Y1 = Y;;
                 Y -= 1;
-                printf("%d %d\n", Y, X);
+                // printf("%d %d\n", Y, X);
+                Input = 'S';
             }
             // printf("W");
             break;
@@ -101,7 +109,7 @@
             {
                 X1 = X, Y1 = Y;
                 Y += 1;
-                printf("%d %d\n", Y, X);
+                // printf("%d %d\n", Y, X);
             }
             // printf("S");
             break;
@@ -111,7 +119,7 @@
             {
                 X1 = X, Y1 = Y;
                 X -= 1;
-                printf("%d %d\n", Y, X);
+                // printf("%d %d\n", Y, X);
             }
             // printf("A");
             break;
@@ -121,7 +129,7 @@
             {
                 X1 = X, Y1 = Y;
                 X += 1;
-                printf("%d %d\n", Y, X);
+                // printf("%d %d\n", Y, X);
             }
             // printf("D");
             break;
@@ -134,6 +142,12 @@
         {
             printf("You cannot pass through here.\n");
             X = X1, Y = Y1;
+        }
+        else if (Map[Y][X] == 'I')
+        {
+            Score++;
+            Map[Y][X] = '*';
+            Map[Y1][X1] = ' ';
         }
         else
         {
@@ -158,7 +172,10 @@
 
         if (Map[4][4] == '*')
         {
-            printf("you've won");
+            printf("you've won\n");
+            printf("your score: %d\n", Score);
+            break;
         }
     }
+    printf("thankyou for playing");
 }
