@@ -8,4 +8,5 @@ Q5: ![image](https://github.com/user-attachments/assets/431ff566-06d8-445f-86a9-
 
 Q6: ![image](https://github.com/user-attachments/assets/0dfcf027-d578-4321-98e9-c73efec6ee9a)
 
-Q9: ![image](https://github.com/user-attachments/assets/930e8a98-881e-4e6b-8ae7-9e0c49475dd9)
+Q9: ![image](https://github.com/user-attachments/assets/30c86794-cffa-4b45-b34b-ae1ec5df6001)
+
